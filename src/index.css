@@ -1003,3 +1003,277 @@
     background: hsl(var(--card) / 0.95);
   }
 }
+
+/* ============================================================
+   THÈME SOLAIRE (clair) — scope sur les pages publiques
+   ============================================================ */
+
+.theme-solaire {
+  /* Tokens shadcn remappés en palette claire */
+  --background: 60 24% 97%;        /* #FAFAF7 ivoire */
+  --foreground: 30 12% 10%;        /* #1C1917 anthracite */
+
+  --card: 0 0% 100%;
+  --card-foreground: 30 12% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 12% 10%;
+
+  --primary: 38 92% 50%;           /* #F59E0B ambre */
+  --primary-foreground: 30 12% 10%;
+
+  --secondary: 36 33% 93%;         /* #F5F0E8 sable */
+  --secondary-foreground: 30 12% 10%;
+
+  --muted: 36 33% 93%;
+  --muted-foreground: 25 5% 45%;   /* #78716C taupe */
+
+  --accent: 38 92% 50%;
+  --accent-foreground: 30 12% 10%;
+
+  --destructive: 0 84% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 30 14% 90%;            /* #E7E5E4 beige */
+  --input: 30 14% 90%;
+  --ring: 38 92% 50%;
+
+  --radius: 1.25rem;
+
+  /* Remap les variables "néon" sur ambre pour repeindre les composants existants */
+  --neon-violet: 38 92% 50%;
+  --neon-blue: 25 90% 53%;          /* orange chaud secondaire */
+  --neon-red: 16 90% 53%;
+  --neon-green: 142 50% 40%;
+  --neon-white: 30 12% 10%;
+
+  --accent-luxe: 38 92% 50%;
+  --accent-luxe-secondary: 25 90% 53%;
+  --accent-luxe-tertiary: 30 70% 55%;
+
+  --atmosphere-primary: 38 92% 50%;
+  --atmosphere-secondary: 25 90% 53%;
+  --atmosphere-tertiary: 36 33% 93%;
+
+  --tier-pro: 38 92% 50%;
+  --tier-custom: 25 90% 53%;
+  --tier-start: 25 5% 60%;
+
+  /* Glass devient surface blanche douce */
+  --glass-bg: 0 0% 100%;
+  --glass-border: 30 14% 88%;
+  --glass-alpha: 1;
+  --glass-blur: 0px;
+  --glass-saturation: 1;
+  --glass-border-alpha: 1;
+  --glass-shadow-alpha: 0.06;
+  --glass-noise-opacity: 0;
+  --glass-highlight: 0;
+  --glass-highlight-color: 0 0% 100%;
+
+  --glass-shadow-diffuse: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --glass-shadow-sharp: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --glass-shadow-glow: 0 12px 40px rgba(245, 158, 11, 0.12);
+  --glass-shadow-inner: none;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Coupe le grain global et les overlays sombres sur le scope solaire */
+body:has(.theme-solaire) {
+  background-color: hsl(60 24% 97%);
+}
+.theme-solaire ::selection {
+  background: hsl(38 92% 50% / 0.25);
+  color: hsl(30 12% 10%);
+}
+
+/* Typographie */
+.theme-solaire h1,
+.theme-solaire h2,
+.theme-solaire h3,
+.theme-solaire h4,
+.theme-solaire .font-syne {
+  font-family: 'Syne', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+.theme-solaire .font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Gradients texte recolorés en ambre */
+.theme-solaire .text-gradient-neon {
+  background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.theme-solaire .text-gradient-violet,
+.theme-solaire .text-gradient-premium,
+.theme-solaire .text-logo-gradient {
+  background: linear-gradient(135deg, #1C1917 0%, #1C1917 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: none;
+  animation: none;
+}
+.theme-solaire .text-logo-gradient::after { content: none; }
+
+/* Glass surfaces deviennent cartes blanches solides */
+.theme-solaire .glass-base,
+.theme-solaire .glass-surface,
+.theme-solaire .glass-card,
+.theme-solaire .glass-card-specular,
+.theme-solaire .glass-modal,
+.theme-solaire .glass-ultra,
+.theme-solaire .glass-input {
+  background: #FFFFFF !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid #E7E5E4 !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+.theme-solaire .glass-base::before,
+.theme-solaire .glass-base::after,
+.theme-solaire .glass-surface::before,
+.theme-solaire .glass-surface::after,
+.theme-solaire .glass-card::before,
+.theme-solaire .glass-card::after,
+.theme-solaire .glass-modal::before,
+.theme-solaire .glass-modal::after,
+.theme-solaire .glass-ultra::before,
+.theme-solaire .glass-ultra::after,
+.theme-solaire .glass-shimmer::after,
+.theme-solaire .glass-noise::before,
+.theme-solaire .glass-iridescent::after {
+  display: none !important;
+}
+.theme-solaire .glass-card:hover,
+.theme-solaire .glass-card-specular:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Glass nav (header) */
+.theme-solaire .glass-nav {
+  background: rgba(250, 250, 247, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid #E7E5E4 !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* Glass button -> bouton clair */
+.theme-solaire .glass-button {
+  background: #FFFFFF !important;
+  border: 1px solid #1C1917 !important;
+  color: #1C1917 !important;
+  backdrop-filter: none !important;
+  box-shadow: none;
+}
+.theme-solaire .glass-button:hover {
+  background: #1C1917 !important;
+  color: #FAFAF7 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #1C1917 !important;
+}
+
+/* CTA primaire (btn-gradient) -> bouton ambre plein */
+.theme-solaire .btn-gradient {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+  border: 1px solid #D97706 !important;
+  color: #1C1917 !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+}
+.theme-solaire .btn-gradient::before { display: none; }
+.theme-solaire .btn-gradient:hover {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%) !important;
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
+  border-color: #B45309 !important;
+}
+
+/* Badges */
+.theme-solaire .badge-gradient {
+  background: #FEF3C7 !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  backdrop-filter: none !important;
+  color: #92400E;
+}
+.theme-solaire .badge-gradient::before { display: none; }
+
+/* Divider premium ambre */
+.theme-solaire .divider-premium {
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.4) 50%, transparent);
+}
+
+/* Card hover */
+.theme-solaire .card-hover:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 25px 50px rgba(245, 158, 11, 0.12), 0 0 30px rgba(245, 158, 11, 0.08);
+  transform: translateY(-5px);
+}
+
+/* Grid background -> motif ambre subtil */
+.theme-solaire .grid-bg {
+  background-image:
+    linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Neon glows -> ombres ambrées douces */
+.theme-solaire .neon-glow-violet,
+.theme-solaire .neon-glow-blue,
+.theme-solaire .neon-glow-red,
+.theme-solaire .neon-glow-green,
+.theme-solaire .neon-glow-white,
+.theme-solaire .neon-glow-gold {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.25), 0 0 60px rgba(245, 158, 11, 0.12);
+}
+
+/* Focus visible ambre */
+.theme-solaire *:focus-visible {
+  outline: 2px solid #F59E0B;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Le grain global (#root::before) reste subtil mais on l'atténue */
+body:has(.theme-solaire) #root::before {
+  opacity: 0;
+}
+
+/* Helper: section sable */
+.theme-solaire .bg-sand { background-color: #F5F0E8; }
+.theme-solaire .bg-ivory { background-color: #FAFAF7; }
+.theme-solaire .bg-anthracite { background-color: #1C1917; }
+.theme-solaire .text-amber-solar { color: #F59E0B; }
+.theme-solaire .text-anthracite { color: #1C1917; }
+
+/* Section label ambre */
+.theme-solaire .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F59E0B;
+}
+.theme-solaire .section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: #F59E0B;
+}
