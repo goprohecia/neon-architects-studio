@@ -1,83 +1,72 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail } from "lucide-react";
 import { motion } from "framer-motion";
-import { ScrollReveal, SectionTransition, ParallaxBackground } from "@/components/animations";
 
 export function CTAFinal() {
   return (
-    <section id="contact">
-    <SectionTransition className="py-24 md:py-32 relative overflow-hidden" parallaxStrength={0.08} scaleOnScroll>
-      {/* Background Effects */}
-      <ParallaxBackground speed={0.3}>
-        <div className="absolute inset-0 bg-gradient-to-r from-neon-violet/10 via-purple-600/10 to-blue-600/10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] lg:w-[800px] h-[400px] md:h-[600px] lg:h-[800px] bg-violet-600/15 rounded-full blur-[200px]" />
-      </ParallaxBackground>
-      <div className="absolute top-0 right-0 w-[200px] md:w-[300px] lg:w-[400px] h-[200px] md:h-[300px] lg:h-[400px] bg-purple-500/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 left-0 w-[200px] md:w-[300px] lg:w-[400px] h-[200px] md:h-[300px] lg:h-[400px] bg-blue-500/10 rounded-full blur-[100px]" />
+    <section id="contact" className="py-20 md:py-28 bg-[#FAFAF7]">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl mx-auto"
+        >
+          <div
+            className="relative bg-[#1C1917] rounded-[28px] p-10 md:p-16 text-center overflow-hidden"
+            style={{
+              borderTop: "3px solid #F59E0B",
+            }}
+          >
+            <div
+              className="absolute inset-x-0 top-0 h-1/2 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(245,158,11,0.18) 0%, transparent 50%)",
+              }}
+            />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Glassmorphism Card */}
-          <ScrollReveal variant="scaleIn" duration={0.8}>
-            <div className="glass-ultra glass-noise text-center relative overflow-hidden p-10 md:p-16 lg:p-20">
-              {/* Inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-violet/10 via-transparent to-purple-600/10 rounded-[inherit]" />
+            <div className="relative">
+              <h2 className="font-syne font-bold text-[28px] md:text-[42px] leading-[1.15] text-white mb-5">
+                Prêt à rendre votre produit{" "}
+                <span className="text-[#F59E0B]">inoubliable ?</span>
+              </h2>
+              <p className="font-inter text-[#A8A29E] text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+                On vous répond sous 24–48h avec une proposition claire et sans engagement.
+              </p>
 
-              <div className="relative z-10">
-                <ScrollReveal variant="fadeInUp" delay={0.1}>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 tracking-tight">
-                    Prêt à rendre votre produit{" "}
-                    <span className="font-medium text-gradient-neon">inoubliable ?</span>
-                  </h2>
-                </ScrollReveal>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="https://calendly.com/yannis-bezriche/impartial-games"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#F59E0B] hover:bg-[#D97706] text-[#1C1917] font-semibold font-inter transition-all shadow-[0_4px_20px_rgba(245,158,11,0.35)] hover:shadow-[0_10px_30px_rgba(245,158,11,0.5)] hover:-translate-y-0.5"
+                >
+                  Planifier un appel
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white text-white font-medium font-inter hover:bg-white hover:text-[#1C1917] transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  Écrire un message
+                </Link>
+              </div>
 
-                <ScrollReveal variant="fadeInUp" delay={0.2}>
-                  <p className="text-lg md:text-xl text-muted-foreground font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-                    On vous répond sous 24–48h avec une proposition claire et sans engagement.
-                  </p>
-                </ScrollReveal>
-
-                <ScrollReveal variant="fadeInUp" delay={0.3}>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <motion.a
-                      href="https://calendly.com/yannis-bezriche/impartial-games"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-gradient inline-flex items-center justify-center gap-3 px-8 py-4 text-white font-semibold rounded-xl text-lg"
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Planifier un appel
-                      <ArrowRight className="h-5 w-5" />
-                    </motion.a>
-
-                    <Link
-                      to="/contact"
-                      className="glass-button inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold rounded-xl text-lg hover:border-neon-violet/50"
-                    >
-                      <Mail className="h-5 w-5" />
-                      Écrire un message
-                    </Link>
-                  </div>
-                </ScrollReveal>
-
-                {/* Contact info */}
-                <ScrollReveal variant="fadeIn" delay={0.5}>
-                  <div className="mt-10 pt-8 border-t border-white/10">
-                    <a
-                      href="mailto:studio@impartialgames.com"
-                      className="text-muted-foreground hover:text-neon-violet transition-colors text-sm"
-                    >
-                      studio@impartialgames.com
-                    </a>
-                  </div>
-                </ScrollReveal>
+              <div className="mt-10 pt-6 border-t border-[#2C2917]">
+                <a
+                  href="mailto:studio@impartialgames.com"
+                  className="text-sm font-inter text-[#78716C] hover:text-[#F59E0B] transition-colors"
+                >
+                  studio@impartialgames.com
+                </a>
               </div>
             </div>
-          </ScrollReveal>
-        </div>
+          </div>
+        </motion.div>
       </div>
-    </SectionTransition>
     </section>
   );
 }
