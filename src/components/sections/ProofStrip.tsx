@@ -1,34 +1,29 @@
-import { motion } from "framer-motion";
+import { Marquee } from "@/components/wow";
 
-const metrics = [
-  { value: "12+", label: "Projets livrés" },
-  { value: "100%", label: "Dans les délais" },
-  { value: "3", label: "Pays clients" },
-  { value: "5★", label: "Satisfaction" },
+const proofs = [
+  "12+ projets livrés",
+  "100% dans les délais",
+  "3 pays clients",
+  "5★ satisfaction",
+  "React · Next · TypeScript",
+  "Figma · Framer Motion",
+  "Supabase · Vercel",
+  "SEO · Core Web Vitals",
 ];
 
 export function ProofStrip() {
   return (
-    <section className="bg-[#F5F0E8] border-y border-[#E7E5E4] py-8">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto items-center">
-          {metrics.map((m, i) => (
-            <motion.div
-              key={m.label}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`text-center ${i > 0 ? "md:border-l md:border-[#E7E5E4]" : ""}`}
-            >
-              <div className="font-syne font-bold text-2xl md:text-[28px] text-[#1C1917] leading-tight">
-                {m.value}
-              </div>
-              <div className="text-xs md:text-sm font-inter text-[#78716C] mt-1">{m.label}</div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+    <section className="bg-[#1C1917] border-y border-[#2C2917] py-6 overflow-hidden">
+      <Marquee speed={40}>
+        {proofs.map((p, i) => (
+          <div key={i} className="flex items-center gap-12 whitespace-nowrap">
+            <span className="font-syne font-semibold text-base md:text-lg text-[#FAFAF7] uppercase tracking-wider">
+              {p}
+            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" aria-hidden />
+          </div>
+        ))}
+      </Marquee>
     </section>
   );
 }
