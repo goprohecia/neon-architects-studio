@@ -1277,3 +1277,33 @@ body:has(.theme-solaire) #root::before {
   height: 2px;
   background: #F59E0B;
 }
+
+/* ========================================
+   WOW LAYER — curseur custom + reduced-motion
+   ======================================== */
+
+/* Curseur natif masqué uniquement sur desktop pointer:fine + thème solaire */
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .theme-solaire,
+  .theme-solaire * {
+    cursor: none !important;
+  }
+  .theme-solaire input,
+  .theme-solaire textarea,
+  .theme-solaire select {
+    cursor: text !important;
+  }
+}
+
+/* Respect prefers-reduced-motion : on coupe les animations infinies / parallax */
+@media (prefers-reduced-motion: reduce) {
+  .theme-solaire *,
+  .theme-solaire *::before,
+  .theme-solaire *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
