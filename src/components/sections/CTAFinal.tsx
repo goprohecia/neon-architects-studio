@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { Sparkles, MagneticButton } from "@/components/wow";
 
 export function CTAFinal() {
   return (
@@ -15,10 +16,10 @@ export function CTAFinal() {
         >
           <div
             className="relative bg-[#1C1917] rounded-[28px] p-10 md:p-16 text-center overflow-hidden"
-            style={{
-              borderTop: "3px solid #F59E0B",
-            }}
+            style={{ borderTop: "3px solid #F59E0B" }}
           >
+            <Sparkles count={28} color="#FCD34D" />
+
             <div
               className="absolute inset-x-0 top-0 h-1/2 pointer-events-none"
               style={{
@@ -37,22 +38,24 @@ export function CTAFinal() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
+                <MagneticButton
+                  as="a"
                   href="https://calendly.com/yannis-bezriche/impartial-games"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#F59E0B] hover:bg-[#D97706] text-[#1C1917] font-semibold font-inter transition-all shadow-[0_4px_20px_rgba(245,158,11,0.35)] hover:shadow-[0_10px_30px_rgba(245,158,11,0.5)] hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#F59E0B] hover:bg-[#D97706] text-[#1C1917] font-semibold font-inter transition-colors shadow-[0_4px_20px_rgba(245,158,11,0.35)] hover:shadow-[0_10px_30px_rgba(245,158,11,0.5)]"
                 >
                   Planifier un appel
                   <ArrowRight className="h-4 w-4" />
-                </a>
-                <Link
+                </MagneticButton>
+                <MagneticButton
+                  as={Link}
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white text-white font-medium font-inter hover:bg-white hover:text-[#1C1917] transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   Écrire un message
-                </Link>
+                </MagneticButton>
               </div>
 
               <div className="mt-10 pt-6 border-t border-[#2C2917]">

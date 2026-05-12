@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Star, Clock } from "lucide-react";
+import { TiltCard, MagneticButton } from "@/components/wow";
 
 interface Pack {
   name: string;
@@ -83,8 +84,9 @@ export function OffresSection() {
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className={`relative h-full ${pack.recommended ? "lg:-translate-y-3" : ""}`}
             >
+              <TiltCard max={6} className="h-full">
               <div
-                className={`relative h-full flex flex-col p-8 md:p-9 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 ${
+                className={`relative h-full flex flex-col p-8 md:p-9 rounded-[20px] bg-white transition-all duration-300 ${
                   pack.recommended
                     ? "border-2 border-[#F59E0B] shadow-[0_20px_50px_rgba(245,158,11,0.18)]"
                     : "border border-[#E7E5E4] shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.12)]"
@@ -131,7 +133,8 @@ export function OffresSection() {
                   </ul>
                 </div>
 
-                <Link
+                <MagneticButton
+                  as={Link}
                   to={`/contact?subject=Demande%20de%20proposition%20-%20${encodeURIComponent(pack.name)}`}
                   className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold font-inter text-sm transition-all ${
                     pack.recommended
@@ -141,8 +144,9 @@ export function OffresSection() {
                 >
                   Recevoir une proposition
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </MagneticButton>
               </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
