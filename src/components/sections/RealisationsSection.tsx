@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { TiltCard } from "@/components/wow";
 import wecloseImg from "@/assets/portfolio/weclose-logo.jpeg";
 import altarysImg from "@/assets/portfolio/altarys-logo.png";
 import propheciaImg from "@/assets/portfolio/prophecia-logo.jpeg";
@@ -61,12 +62,18 @@ export function RealisationsSection() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="group h-full bg-white rounded-[20px] border border-[#E7E5E4] overflow-hidden hover:border-[#F59E0B]/40 hover:shadow-[0_12px_40px_rgba(245,158,11,0.12)] hover:-translate-y-1 transition-all duration-300">
+              <TiltCard max={6} className="h-full rounded-[20px]">
+              <div className="group h-full bg-white rounded-[20px] border border-[#E7E5E4] overflow-hidden hover:border-[#F59E0B]/40 hover:shadow-[0_12px_40px_rgba(245,158,11,0.12)] transition-all duration-300">
                 <div className="relative h-44 overflow-hidden bg-[#F5F0E8]">
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay clip-path reveal au hover */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-[#1C1917]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   />
                 </div>
                 <div className="p-6">
@@ -117,6 +124,7 @@ export function RealisationsSection() {
                   </div>
                 </div>
               </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
