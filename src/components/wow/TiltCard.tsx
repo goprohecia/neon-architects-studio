@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ReactNode, useRef, MouseEvent } from "react";
 
 interface TiltCardProps {
@@ -20,9 +20,9 @@ export function TiltCard({ children, className = "", max = 8, glare = true }: Ti
   const rx = useSpring(useTransform(my, [0, 1], [max, -max]), { stiffness: 200, damping: 20 });
   const ry = useSpring(useTransform(mx, [0, 1], [-max, max]), { stiffness: 200, damping: 20 });
 
-  // Glare position
   const glareX = useTransform(mx, (v) => `${v * 100}%`);
   const glareY = useTransform(my, (v) => `${v * 100}%`);
+  const glareBg = useMotionTemplate`radial-gradient(380px circle at ${glareX} ${glareY}, rgba(255,235,180,0.45), transparent 55%)`;
 
   const handleMove = (e: MouseEvent) => {
     if (!ref.current) return;
@@ -50,13 +50,7 @@ export function TiltCard({ children, className = "", max = 8, glare = true }: Ti
         <motion.div
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-[inherit] mix-blend-overlay opacity-0 transition-opacity duration-300 hover:opacity-100"
-          style={{
-            background: useTransform(
-              [glareX, glareY] as never,
-              ([gx, gy]: [string, string]) =>
-                `radial-gradient(400px circle at ${gx} ${gy}, rgba(255,235,180,0.45), transparent 50%)`
-            ),
-          }}
+          style={{ background: glareBg }}
         />
       )}
     </motion.div>
