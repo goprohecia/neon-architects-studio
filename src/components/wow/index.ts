@@ -7,3 +7,4 @@ export { Sparkles } from "./Sparkles";
 export { RevealText } from "./RevealText";
 export { ScrollVelocityText } from "./ScrollVelocityText";
 export { CursorFollower } from "./CursorFollower";
+export { PrismObject } from "./PrismObject";
