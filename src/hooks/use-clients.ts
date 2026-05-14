@@ -62,7 +62,7 @@ export function useClients() {
       if (updates.ville !== undefined) dbUpdates.ville = updates.ville;
       if (updates.pays !== undefined) dbUpdates.pays = updates.pays;
       if (updates.statut !== undefined) dbUpdates.statut = updates.statut;
-      const { error } = await supabase.from("clients").update(dbUpdates).eq("id", id);
+      const { error } = await supabase.from("clients").update(dbUpdates as never).eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["clients"] }),
