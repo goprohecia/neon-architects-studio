@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -1008,60 +1008,64 @@
    THÈME SOLAIRE (clair) — scope sur les pages publiques
    ============================================================ */
 
+/* ===========================================================
+   THEME PRISME — light editorial · iridescent · serif elegance
+   (scope name kept as .theme-solaire to avoid Layout refactor)
+   =========================================================== */
 .theme-solaire {
-  /* Tokens shadcn remappés en palette claire */
-  --background: 60 24% 97%;        /* #FAFAF7 ivoire */
-  --foreground: 30 12% 10%;        /* #1C1917 anthracite */
+  /* shadcn tokens */
+  --background: 40 30% 98%;        /* #FBFAF7 ivoire */
+  --foreground: 265 30% 6%;        /* #0E0B14 encre */
 
   --card: 0 0% 100%;
-  --card-foreground: 30 12% 10%;
+  --card-foreground: 265 30% 6%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 30 12% 10%;
+  --popover-foreground: 265 30% 6%;
 
-  --primary: 38 92% 50%;           /* #F59E0B ambre */
-  --primary-foreground: 30 12% 10%;
+  --primary: 262 83% 58%;          /* #7C3AED violet profond */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 36 33% 93%;         /* #F5F0E8 sable */
-  --secondary-foreground: 30 12% 10%;
+  --secondary: 265 30% 96%;        /* lavande poudrée */
+  --secondary-foreground: 265 30% 6%;
 
-  --muted: 36 33% 93%;
-  --muted-foreground: 25 5% 45%;   /* #78716C taupe */
+  --muted: 265 30% 96%;
+  --muted-foreground: 262 12% 42%; /* #6F6580 lilas grisé */
 
-  --accent: 38 92% 50%;
-  --accent-foreground: 30 12% 10%;
+  --accent: 258 90% 76%;           /* #A78BFA violet doux */
+  --accent-foreground: 265 30% 6%;
 
-  --destructive: 0 84% 50%;
+  --destructive: 0 84% 58%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 30 14% 90%;            /* #E7E5E4 beige */
-  --input: 30 14% 90%;
-  --ring: 38 92% 50%;
+  --border: 265 30% 92%;           /* #EEEAF4 */
+  --input: 265 30% 92%;
+  --ring: 262 83% 58%;
 
-  --radius: 1.25rem;
+  --radius: 1.5rem;
 
-  /* Remap les variables "néon" sur ambre pour repeindre les composants existants */
-  --neon-violet: 38 92% 50%;
-  --neon-blue: 25 90% 53%;          /* orange chaud secondaire */
-  --neon-red: 16 90% 53%;
-  --neon-green: 142 50% 40%;
-  --neon-white: 30 12% 10%;
+  /* Couleurs néon remappées prisme (R/G/B iridescent + violet) */
+  --neon-violet: 262 83% 58%;
+  --neon-blue: 230 100% 68%;       /* #5E7AFF */
+  --neon-red: 348 100% 68%;        /* #FF5E78 */
+  --neon-green: 158 70% 64%;       /* #5EE7B1 */
+  --neon-white: 265 30% 6%;
 
-  --accent-luxe: 38 92% 50%;
-  --accent-luxe-secondary: 25 90% 53%;
-  --accent-luxe-tertiary: 30 70% 55%;
+  --accent-luxe: 262 83% 58%;
+  --accent-luxe-secondary: 335 75% 82%;  /* rose poudre */
+  --accent-luxe-tertiary: 20 100% 80%;   /* pêche */
 
-  --atmosphere-primary: 38 92% 50%;
-  --atmosphere-secondary: 25 90% 53%;
-  --atmosphere-tertiary: 36 33% 93%;
+  --atmosphere-primary: 258 90% 76%;
+  --atmosphere-secondary: 335 75% 82%;
+  --atmosphere-tertiary: 20 100% 80%;
 
-  --tier-pro: 38 92% 50%;
-  --tier-custom: 25 90% 53%;
-  --tier-start: 25 5% 60%;
+  --tier-pro: 262 83% 58%;
+  --tier-custom: 20 100% 75%;
+  --tier-start: 262 12% 60%;
 
-  /* Glass devient surface blanche douce */
+  /* Glass devient surface ivoire/blanche pure */
   --glass-bg: 0 0% 100%;
-  --glass-border: 30 14% 88%;
+  --glass-border: 265 30% 92%;
   --glass-alpha: 1;
   --glass-blur: 0px;
   --glass-saturation: 1;
@@ -1071,50 +1075,77 @@
   --glass-highlight: 0;
   --glass-highlight-color: 0 0% 100%;
 
-  --glass-shadow-diffuse: 0 4px 24px rgba(0, 0, 0, 0.06);
-  --glass-shadow-sharp: 0 4px 24px rgba(0, 0, 0, 0.06);
-  --glass-shadow-glow: 0 12px 40px rgba(245, 158, 11, 0.12);
+  --glass-shadow-diffuse: 0 30px 80px -40px hsl(262 50% 40% / 0.18);
+  --glass-shadow-sharp: 0 8px 28px hsl(262 30% 20% / 0.06);
+  --glass-shadow-glow: 0 30px 80px -30px hsl(262 83% 58% / 0.22);
   --glass-shadow-inner: none;
+
+  /* Prisme palette (utilisable en var(--prisme-*)) */
+  --prisme-ivory: #FBFAF7;
+  --prisme-cream: #F6F2EC;
+  --prisme-lavender: #F3EEFB;
+  --prisme-ink: #0E0B14;
+  --prisme-ink-soft: #2A2433;
+  --prisme-muted: #6F6580;
+  --prisme-border: #EEEAF4;
+  --prisme-violet: #7C3AED;
+  --prisme-violet-soft: #A78BFA;
+  --prisme-rose: #F0AFC8;
+  --prisme-peach: #FFB996;
+  --prisme-red: #FF5E78;
+  --prisme-green: #5EE7B1;
+  --prisme-blue: #5E7AFF;
+
+  --prisme-gradient: linear-gradient(110deg, #7C3AED 0%, #A78BFA 30%, #F0AFC8 65%, #FFB996 100%);
+  --prisme-gradient-soft: linear-gradient(110deg, rgba(124,58,237,0.16) 0%, rgba(240,175,200,0.18) 55%, rgba(255,185,150,0.16) 100%);
+  --prisme-gradient-rgb: linear-gradient(110deg, #FF5E78 0%, #5EE7B1 50%, #5E7AFF 100%);
 
   font-family: 'Inter', system-ui, sans-serif;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
 
-/* Coupe le grain global et les overlays sombres sur le scope solaire */
 body:has(.theme-solaire) {
-  background-color: hsl(60 24% 97%);
+  background-color: #FBFAF7;
 }
 .theme-solaire ::selection {
-  background: hsl(38 92% 50% / 0.25);
-  color: hsl(30 12% 10%);
+  background: rgba(124, 58, 237, 0.18);
+  color: #0E0B14;
 }
 
-/* Typographie */
+/* Typographie Prisme — serif éditorial pour titres + UI sans pour body */
 .theme-solaire h1,
 .theme-solaire h2,
 .theme-solaire h3,
+.theme-solaire .font-serif,
+.theme-solaire .prisme-serif {
+  font-family: 'Instrument Serif', 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
 .theme-solaire h4,
 .theme-solaire .font-syne {
-  font-family: 'Syne', 'Inter', sans-serif;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
 }
-.theme-solaire .font-inter {
+.theme-solaire .font-inter,
+.theme-solaire body,
+.theme-solaire p,
+.theme-solaire li,
+.theme-solaire a,
+.theme-solaire button,
+.theme-solaire input,
+.theme-solaire textarea {
   font-family: 'Inter', sans-serif;
 }
 
-/* Gradients texte recolorés en ambre */
-.theme-solaire .text-gradient-neon {
-  background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
+/* Texte dégradé signature */
+.theme-solaire .text-gradient-prisme,
+.theme-solaire .text-gradient-neon,
 .theme-solaire .text-gradient-violet,
 .theme-solaire .text-gradient-premium,
 .theme-solaire .text-logo-gradient {
-  background: linear-gradient(135deg, #1C1917 0%, #1C1917 100%);
+  background: var(--prisme-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1124,7 +1155,19 @@ body:has(.theme-solaire) {
 }
 .theme-solaire .text-logo-gradient::after { content: none; }
 
-/* Glass surfaces deviennent cartes blanches solides */
+/* Italique gradient (mots accentués) */
+.theme-solaire .prisme-italic-grad {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  background: var(--prisme-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass surfaces -> cartes blanches solides élégantes */
 .theme-solaire .glass-base,
 .theme-solaire .glass-surface,
 .theme-solaire .glass-card,
@@ -1135,8 +1178,8 @@ body:has(.theme-solaire) {
   background: #FFFFFF !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border: 1px solid #E7E5E4 !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--prisme-border) !important;
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.06);
 }
 .theme-solaire .glass-base::before,
 .theme-solaire .glass-base::after,
@@ -1156,133 +1199,218 @@ body:has(.theme-solaire) {
 .theme-solaire .glass-card:hover,
 .theme-solaire .glass-card-specular:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.16);
-  border-color: rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 24px 60px -20px rgba(124, 58, 237, 0.22);
+  border-color: rgba(124, 58, 237, 0.35) !important;
 }
 
-/* Glass nav (header) */
+/* Header glass clair */
 .theme-solaire .glass-nav {
-  background: rgba(250, 250, 247, 0.85) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid #E7E5E4 !important;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  background: rgba(251, 250, 247, 0.82) !important;
+  backdrop-filter: blur(20px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+  border-bottom: 1px solid rgba(238, 234, 244, 0.7) !important;
+  box-shadow: 0 1px 0 rgba(124, 58, 237, 0.03);
 }
 
-/* Glass button -> bouton clair */
+/* Glass button -> bouton clair contour encre */
 .theme-solaire .glass-button {
   background: #FFFFFF !important;
-  border: 1px solid #1C1917 !important;
-  color: #1C1917 !important;
+  border: 1px solid var(--prisme-ink) !important;
+  color: var(--prisme-ink) !important;
   backdrop-filter: none !important;
   box-shadow: none;
 }
 .theme-solaire .glass-button:hover {
-  background: #1C1917 !important;
-  color: #FAFAF7 !important;
+  background: var(--prisme-ink) !important;
+  color: var(--prisme-ivory) !important;
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  border-color: #1C1917 !important;
+  box-shadow: 0 12px 28px rgba(14, 11, 20, 0.18);
+  border-color: var(--prisme-ink) !important;
 }
 
-/* CTA primaire (btn-gradient) -> bouton ambre plein */
+/* CTA principal — pilule dégradée prisme */
+.theme-solaire .btn-prisme,
 .theme-solaire .btn-gradient {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
-  border: 1px solid #D97706 !important;
-  color: #1C1917 !important;
-  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+  background: var(--prisme-gradient) !important;
+  background-size: 200% 100% !important;
+  border: none !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 30px -8px rgba(124, 58, 237, 0.45);
+  transition: background-position 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+.theme-solaire .btn-prisme::before,
 .theme-solaire .btn-gradient::before { display: none; }
+.theme-solaire .btn-prisme:hover,
 .theme-solaire .btn-gradient:hover {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%) !important;
-  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
+  background-position: 100% 0 !important;
+  box-shadow: 0 18px 40px -10px rgba(124, 58, 237, 0.6);
   transform: translateY(-2px);
-  border-color: #B45309 !important;
 }
 
-/* Badges */
-.theme-solaire .badge-gradient {
-  background: #FEF3C7 !important;
-  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+/* Pastilles / pills */
+.theme-solaire .badge-gradient,
+.theme-solaire .prisme-pill {
+  background: var(--prisme-lavender) !important;
+  border: 1px solid rgba(124, 58, 237, 0.18) !important;
   backdrop-filter: none !important;
-  color: #92400E;
+  color: #5B21B6;
 }
 .theme-solaire .badge-gradient::before { display: none; }
-
-/* Divider premium ambre */
-.theme-solaire .divider-premium {
-  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.4) 50%, transparent);
+.theme-solaire .prisme-pill-grad {
+  background: var(--prisme-gradient) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 8px 24px -6px rgba(124, 58, 237, 0.5);
 }
 
-/* Card hover */
+/* Divider premium dégradé */
+.theme-solaire .divider-premium {
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.4) 50%, transparent);
+}
+
+/* Card hover violet */
 .theme-solaire .card-hover:hover {
-  border-color: rgba(245, 158, 11, 0.5);
-  box-shadow: 0 25px 50px rgba(245, 158, 11, 0.12), 0 0 30px rgba(245, 158, 11, 0.08);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 30px 60px -20px rgba(124, 58, 237, 0.2);
   transform: translateY(-5px);
 }
 
-/* Grid background -> motif ambre subtil */
+/* Grid background — motif violet très discret */
 .theme-solaire .grid-bg {
   background-image:
-    linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
 }
 
-/* Neon glows -> ombres ambrées douces */
+/* Neon glows -> halos violet doux */
 .theme-solaire .neon-glow-violet,
 .theme-solaire .neon-glow-blue,
 .theme-solaire .neon-glow-red,
 .theme-solaire .neon-glow-green,
 .theme-solaire .neon-glow-white,
 .theme-solaire .neon-glow-gold {
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.25), 0 0 60px rgba(245, 158, 11, 0.12);
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.22), 0 0 120px rgba(240, 175, 200, 0.15);
 }
 
-/* Focus visible ambre */
+/* Focus visible violet */
 .theme-solaire *:focus-visible {
-  outline: 2px solid #F59E0B;
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 2px solid #7C3AED;
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
-/* Le grain global (#root::before) reste subtil mais on l'atténue */
+/* Grain global atténué */
 body:has(.theme-solaire) #root::before {
   opacity: 0;
 }
 
-/* Helper: section sable */
-.theme-solaire .bg-sand { background-color: #F5F0E8; }
-.theme-solaire .bg-ivory { background-color: #FAFAF7; }
-.theme-solaire .bg-anthracite { background-color: #1C1917; }
-.theme-solaire .text-amber-solar { color: #F59E0B; }
-.theme-solaire .text-anthracite { color: #1C1917; }
+/* Helpers de surface */
+.theme-solaire .bg-sand,
+.theme-solaire .bg-cream { background-color: var(--prisme-cream); }
+.theme-solaire .bg-ivory { background-color: var(--prisme-ivory); }
+.theme-solaire .bg-lavender { background-color: var(--prisme-lavender); }
+.theme-solaire .bg-anthracite { background-color: var(--prisme-ink); }
+.theme-solaire .text-anthracite { color: var(--prisme-ink); }
+.theme-solaire .text-violet-prisme { color: var(--prisme-violet); }
+.theme-solaire .text-amber-solar { color: var(--prisme-violet); }
 
-/* Section label ambre */
+/* Section label — pastille violet */
 .theme-solaire .section-label {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #F59E0B;
+  color: #5B21B6;
 }
 .theme-solaire .section-label::before {
   content: '';
   display: inline-block;
-  width: 24px;
-  height: 2px;
-  background: #F59E0B;
+  width: 22px;
+  height: 1.5px;
+  background: var(--prisme-gradient);
+  border-radius: 2px;
 }
 
-/* ========================================
-   WOW LAYER — curseur custom + reduced-motion
-   ======================================== */
+/* Halos colorés (peuvent être placés via classe .prisme-halo-*) */
+.theme-solaire .prisme-halo-violet {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(110px);
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+}
+.theme-solaire .prisme-halo-rose {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(110px);
+  background: radial-gradient(circle, rgba(240, 175, 200, 0.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+.theme-solaire .prisme-halo-peach {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  filter: blur(110px);
+  background: radial-gradient(circle, rgba(255, 185, 150, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-/* Curseur natif masqué uniquement sur desktop pointer:fine + thème solaire */
+/* Bordure dégradée animée (pour cartes premium) */
+.theme-solaire .prisme-border-grad {
+  position: relative;
+  isolation: isolate;
+}
+.theme-solaire .prisme-border-grad::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: var(--prisme-gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Trait dégradé sous le lien actif */
+.theme-solaire .prisme-active-underline {
+  background: var(--prisme-gradient) !important;
+}
+
+/* Animation slow rotate pour PrismObject */
+@keyframes prisme-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.theme-solaire .prisme-spin-slow {
+  animation: prisme-spin-slow 60s linear infinite;
+}
+
+/* Animation shimmer pour gradients texte */
+@keyframes prisme-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.theme-solaire .prisme-shimmer {
+  background-size: 200% 200%;
+  animation: prisme-shimmer 8s ease-in-out infinite;
+}
+
+/* ============ WOW LAYER ============ */
+
+/* Curseur natif désactivé sur desktop pour curseur custom */
 @media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
   .theme-solaire,
   .theme-solaire * {
@@ -1295,7 +1423,7 @@ body:has(.theme-solaire) #root::before {
   }
 }
 
-/* Respect prefers-reduced-motion : on coupe les animations infinies / parallax */
+/* Reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .theme-solaire *,
   .theme-solaire *::before,
